@@ -14,7 +14,9 @@ def check_dms(dms):
     return bool(dms_pattern.match(value))
 
 def convert_dms(dms):
-    
+    if(!check_dms(dms)):
+        print(f"DMS {dms} is not in correct DMS format")
+        return None
 def JSON_converter(file_path, geo_string):
     if geo_string != "Point" and geo_string != "Polygon" and geo_string != "LineString":
         print(f"Error: The Geometry type '{geo_string}' is invalid")
