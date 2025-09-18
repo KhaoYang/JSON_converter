@@ -1,0 +1,12 @@
+{
+  "name": "My Application",
+  "version": "1.0",
+  "settings": {
+    "debug_mode": true,
+    "log_level": "INFO"
+  },
+  "users": [
+    {"id": 1, "username": "alice"},
+    {"id": 2, "username": "bob"}
+  ]
+}
