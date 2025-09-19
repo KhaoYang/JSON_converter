@@ -1,6 +1,7 @@
 import json
 import re
 
+#checks if dms is in correct order
 dms_pattern = re.compile(
     r"""^
     (\d{1,3})°          # degrees
