@@ -27,7 +27,7 @@ def convert_dms(dms):
     if direction in ['S', 'W']:
         decimal *= -1
     return decimal
-
+#Main Function Definition
 def JSON_converter(file_path, geo_string):
     if geo_string != "Point" and geo_string != "Polygon" and geo_string != "LineString":
         print(f"Error: The Geometry type '{geo_string}' is invalid")
