@@ -28,6 +28,7 @@ def convert_dms(dms):
         decimal *= -1
     return decimal
 #Main Function Definition
+#Outline: Create geoJSON function that changes the JSON into a geoJSON. Add adaptabiility characteristics based on what the format of the JSON is inputted as. Perhaps a coordinate parameter that specifies what object the coordinates are under?
 def JSON_converter(file_path, geo_string):
     if geo_string != "Point" and geo_string != "Polygon" and geo_string != "LineString":
         print(f"Error: The Geometry type '{geo_string}' is invalid")
@@ -49,7 +50,7 @@ def JSON_converter(file_path, geo_string):
         print(f"Error: Failed to decode JSON from the file '{file_path}'.")
         return None
 
-   
+
 
 
 
