@@ -27,6 +27,21 @@ def convert_dms(dms):
     if direction in ['S', 'W']:
         decimal *= -1
     return decimal
+
+def parse_coordinate(value):
+    """Parse a coordinate that could be float, int, or DMS string."""
+    if isinstance(value, (int, float)):
+        return float(value)
+    elif isinstance(value, str):
+        value = value.strip()
+        if check_dms(value):
+            return convert_dms(value)
+        try:
+            return float(value)
+        except ValueError:
+            raise ValueError(f"Invalid coordinate format: {value}")
+    else:
+        raise TypeError(f"Unsupported coordinate type: {type(value)}")
 #Main Function Definition
 #Outline: Create geoJSON function that changes the JSON into a geoJSON. Add adaptabiility characteristics based on what the format of the JSON is inputted as. Perhaps a coordinate parameter that specifies what object the coordinates are under?
 def JSON_converter(file_path, geo_string):
